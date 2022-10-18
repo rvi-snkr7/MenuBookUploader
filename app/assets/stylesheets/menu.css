@@ -1,0 +1,17 @@
+.whole-body{
+    background-color: red;
+    height: 1000px;
+    /*background-image: url("menu.jpg");background-repeat: no-repeat;*/
+    /*position: absolute;*/
+    /*background-size: auto;*/
+}
+.Form{
+    float: right;
+}
+.whole-body img{
+    height: 950px;
+    width: 950px;
+}
+.container-sm{
+    margin: -676px 0px 0px 119px;
+}

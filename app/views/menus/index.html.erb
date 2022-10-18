@@ -1,6 +1,36 @@
-<h1>Menus#upload</h1>
-<%=form_tag import_menus_path,multipart: true do %>
-<%=file_field_tag :file %>
-<%=submit_tag "upload" %>
-<%end%>
+<div class="whole-body">
+  <%=image_tag "menu.jpg" %>
+  <div class="Form">
+    <%= form_tag import_menus_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "upload" %>
+    <% end %>
+  </div>
+  <div class="container-sm">
+    <table>
+      <tr style="gap: 20px">
+        <th style="color:lawngreen; font-family: 'Fira Code'; font-size: large;">Dish Name</th>
+        <th style="color:lawngreen; font-family: 'Fira Code'; font-size: large;">Dish_description</th>
+        <th style="color:lawngreen; font-family: 'Fira Code'; font-size: large;">Dish_type</th>
+        <th style="color:lawngreen; font-family: 'Fira Code'; font-size: large;">allergens</th>
+        <th style="color:lawngreen; font-family: 'Fira Code'; font-size: large;">Category</th>
+        <th style="color:lawngreen; font-family: 'Fira Code'; font-size: large;">Price</th>
+      </tr>
+      <% @menu.each do |display| %>
+        <tr>
+          <td style="color:antiquewhite; font-family: 'Fira Code'; font-size: large;"> <%= display.dish_name %></td>
+          <td style="color:antiquewhite; font-family: 'Fira Code'; font-size: large;"><%= display.dish_description %></td>
+          <td style="color:antiquewhite; font-family: 'Fira Code'; font-size: large;">  <%= display.dish_type %></td>
+          <td style="color:antiquewhite; font-family: 'Fira Code'; font-size: large;"> <%= display.allergens %></td>
+          <td style="color:antiquewhite; font-family: 'Fira Code'; font-size: large;"><%= display.Category %></td>
+          <td style="color:antiquewhite; font-family: 'Fira Code'; font-size: large;"> <%= display.Price %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+
+</div>
+
+
 
